@@ -1,0 +1,14 @@
+name: Stats
+main: com.nidefawl.Stats.Stats
+version: 1.1.1
+author: TerraNetworkOrg(orig.nidefawl)
+depend: [Vault]
+commands:
+    stats:
+       description: Stats command
+       usage: /<command> 
+              /<command> [category|statname|convert|list|help]
+              /<command> [player] [category|statname]
+    played:
+        description: Shows your played time
+        usage: /<command>

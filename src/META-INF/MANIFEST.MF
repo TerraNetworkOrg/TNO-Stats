@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Class-Path: Stats/lib/sqlite.jar Stats/lib/mysql.jar GroupManager.jar Permissions.jar
+
+
+
+
+
+

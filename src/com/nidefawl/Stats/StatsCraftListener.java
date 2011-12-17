@@ -20,13 +20,15 @@ public class StatsCraftListener extends InventoryListener{
 		if (!(event.getPlayer() instanceof Player))
 			return;
 		ItemStack blockKey = event.getResult();
-		int blockID = blockKey.getTypeId();
-		MaterialData blockByte = blockKey.getData();
-		int blockParam = blockByte.getData();
-		String blockName = (new Integer(blockID)).toString();
-		int amount = blockKey.getAmount();
-		plugin.updateStat(event.getPlayer(), "crafting", "" + blockName + ":" + blockParam, amount, true);
-		plugin.updateStat(event.getPlayer(), "crafting", "total", 1, true);
-		plugin.updateStat(event.getPlayer(), "crafting", "total_sum", amount, true);
+		if (blockKey != null){
+			int blockID = blockKey.getTypeId();		
+			MaterialData blockByte = blockKey.getData();
+			int blockParam = blockByte.getData();
+			String blockName = (new Integer(blockID)).toString();
+			int amount = blockKey.getAmount();
+			plugin.updateStat(event.getPlayer(), "crafting", "" + blockName + ":" + blockParam, amount, true);
+			plugin.updateStat(event.getPlayer(), "crafting", "total", 1, true);
+			plugin.updateStat(event.getPlayer(), "crafting", "total_sum", amount, true);
+		}
 	}
 }

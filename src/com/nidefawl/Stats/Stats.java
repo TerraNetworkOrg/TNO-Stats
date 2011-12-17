@@ -41,8 +41,8 @@ import com.nidefawl.Stats.util.Updater;
 public class Stats extends JavaPlugin {
 
 	public final static Logger log = Logger.getLogger("Minecraft");
-	public static final String version = "1.1.1";
-	public static final String logprefix = "[Stats 1.1.1]";
+	public static final String version = "2.0.1";
+	public static final String logprefix = "[Stats 2.0.1]";
 	public final static String defaultCategory = "stats";
 	public boolean enabled = false;
 	public boolean updated = false;
@@ -570,8 +570,8 @@ public class Stats extends JavaPlugin {
 		//}
 		if(craftListener == null){
 		    if(getServer().getPluginManager().getPlugin("Spout") != null){
-				craftListener = new StatsCraftListener(this);
-		    	if(StatsSettings.logCraft) {
+		    	if(StatsSettings.logCraft == true) {
+		    		craftListener = new StatsCraftListener(this);
 		    		getServer().getPluginManager().registerEvent(Event.Type.CUSTOM_EVENT, craftListener, Priority.Monitor, this);
                     System.out.println("[Stats] Successfully linked with Spout.");
 			    }
